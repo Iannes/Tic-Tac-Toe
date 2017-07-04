@@ -1,0 +1,125 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body{
+
+    background-color: #14bdac;
+
+}
+
+
+header {
+	
+	height: 200px;
+	width: 100%;
+	background: transparent;	
+	margin-bottom: 15%;
+}
+
+header h1 {
+  	
+  	margin-bottom: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+
+button {
+    margin: 5% 0;
+    min-height: 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background: transparent;
+}
+
+
+.score {
+	max-width: 70%;
+	margin: 0 auto;
+	display: flex;
+	justify-content: space-around;
+}
+
+.score button {
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	margin: 5%;
+	justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+
+}
+
+
+.btn-visible {
+
+	background: grey;
+
+}
+
+.btns {
+	
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+	margin: 0 auto;
+}
+
+.wrapper {
+	
+	width: 25%;
+	margin: 0 auto;
+	height: auto;
+}
+
+.grid {
+	
+	display: flex;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.square {
+	width: 100px;
+	height: 100px;
+	border-bottom: 1px solid grey;
+	border-left: 1px solid grey;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+
+}
+
+.square:hover {
+	cursor:pointer;
+}
+
+.square:nth-child(3) {
+	border-bottom: none;
+}
+
+	
+
+#one, #two, #three {
+	border-left: none;
+
+}
+
+.playing {
+
+    background: chartreuse;
+    border-bottom-color: aqua
+}
+
+.winner {
+	text-decoration: line-through;
+	color: grey;
+}
+

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+
+	<link href="assets/images/favicon.ico" rel="icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Yannis Spyrou | Web Developing Services" />
+    <meta name="author" content="Yannis Spyrou - http://yannisspyrou.co.uk/" />
+</head>
+<body>
+
+	<header>
+
+	<audio id="victory" src="victoir.mp3"></audio>
+
+		<h1>Tic Tac Toe</h1>
+
+		<article class="btns">
+				<button><h3>Player : <span id="message"></span></h3></button>
+
+				<button class="btn btn-visible" onclick="init()"><span id="btn__msg">New Game</span></button>
+
+
+		</article>		
+
+
+		<hr>
+
+				<article class="score">
+				
+					<button id="activePlayer1"><h3>X : <span id="player1"></span></h3></button>
+
+					<button ><h3> -: <span id="tie"></span></h3></button>
+
+
+					<button id="activePlayer2"><h3>O : <span id="player2"></span></h3></button>
+			
+				</article> 
+
+
+
+
+		<hr>
+
+	</header>
+
+	<section class="wrapper">
+		
+		<article class="grid">
+
+			<article class="top__row">
+					<section id="one" class="square left horizontal__top diagonal__left"></section>
+					<section id="two" class="square left horizontal__middle"></section>
+					<section id="three" class="square left horizontal__bottom diagonal__right"></section>
+			</article>
+
+			<article class="middle__row	">
+					<section class="square middle horizontal__top"></section>
+					<section class="square middle horizontal__middle diagonal__left diagonal__right"></section>
+					<section class="square middle horizontal__bottom"></section>
+			</article>
+
+			<article class="bottom__row">
+					<section class="square right horizontal__top diagonal__right"></section>
+					<section class="square right horizontal__middle"></section>
+					<section class="square right horizontal__bottom diagonal__left"></section>
+			</article>
+
+			
+		</article>
+
+	</section>
+
+
+	<section class="buttons">
+
+		
+
+	</section>
+
+<script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>
