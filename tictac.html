@@ -13,36 +13,15 @@
 
 	<header>
 
-	<audio id="victory" src="victoir.mp3"></audio>
+	     <audio id="victory" src="victoir.mp3"></audio>
 
-		<h1>Tic Tac Toe</h1>
-
-		<article class="btns">
-				<button><h3>Player : <span id="message"></span></h3></button>
+		<!-- 	<section class="top__buttons"> -->
 
 				<button class="btn btn-visible" onclick="init()"><span id="btn__msg">New Game</span></button>
-
-
-		</article>		
-
-
-		<hr>
-
-				<article class="score">
 				
-					<button id="activePlayer1"><h3>X : <span id="player1"></span></h3></button>
-
-					<button ><h3> -: <span id="tie"></span></h3></button>
+		<!-- 	</section>	 -->
 
 
-					<button id="activePlayer2"><h3>O : <span id="player2"></span></h3></button>
-			
-				</article> 
-
-
-
-
-		<hr>
 
 	</header>
 
@@ -71,14 +50,18 @@
 			
 		</article>
 
+		<article class="scores">
+			
+			<p class="one" id="activePlayer1">X :<span id="player1"></span></p>
+			<p class="two">Ties:<span id="tie"></span></p>
+			<p class="three" id="activePlayer2">O :<span id="player2"></span></p>
+
+		</article>
+
 	</section>
 
 
-	<section class="buttons">
 
-		
-
-	</section>
 
 <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
