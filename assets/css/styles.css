@@ -25,8 +25,12 @@ header {
 	background: transparent;
 	max-width: 75%;
 	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-between;	
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;	
 }
 
 
@@ -55,17 +59,29 @@ p {
 .score {
 	max-width: 70%;
 	margin: 0 auto;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 }
 
 .score button {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	width: 20%;
 	margin: 5%;
-	justify-content: center;
-    align-items: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 4px;
 
 }
@@ -76,6 +92,7 @@ p {
 
 	background: #FF8008;  /* fallback for old browsers */
 	background: -webkit-linear-gradient(to right, #FFC837, #FF8008);  /* Chrome 10-25, Safari 5.1-6 */
+	background: -webkit-linear-gradient(left, #FFC837, #FF8008);
 	background: linear-gradient(to right, #FFC837, #FF8008); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     font-size: 20px;
     width: 10%;
@@ -98,8 +115,15 @@ p {
 
 .btns {
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
-	flex-direction: column;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	width: 20%;
 	margin: 0 auto;
 }
@@ -113,6 +137,10 @@ p {
 
 .grid {
 	
+	display: -webkit-box;
+	
+	display: -ms-flexbox;
+	
 	display: flex;
 	width: 60%;
 	margin: 0 auto;
@@ -122,8 +150,13 @@ p {
 
 .scores {
 
+	display: -webkit-box;
+
+	display: -ms-flexbox;
+
 	display: flex;
-	justify-content: space-around;
+	-ms-flex-pack: distribute;
+	    justify-content: space-around;
 }
 
 
@@ -132,9 +165,15 @@ p {
     height: 150px;
     border-bottom: 3px solid grey;
     border-left: 3px solid grey;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     font-size: 28px;
 }
 
@@ -160,6 +199,7 @@ p {
 .playing {
    border-bottom: 1px solid aqua;
    padding-bottom: 9px;
+   -webkit-transition: height 1s ease-in-out;
    transition: height 1s ease-in-out;
 }
 
@@ -171,8 +211,8 @@ background: linear-gradient(to right, #3a7bd5, #00d2ff);
     border-radius: 80%;
     position: relative;
   box-shadow: 0 0 0 20px #1d1b1b;
-border: 1px solid black;*/
-}
+border: 1px solid black;
+}*/
 
 .winner {
 	text-decoration: line-through;
