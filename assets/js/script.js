@@ -73,6 +73,13 @@ let rows = [right, middle, left, horTop, horMiddle, horBottom, diagonalLeft, dia
 
 
 
+document.onkeydown = function(e) {
+
+  if(e.keyCode === 13) { // If user presses Enter key the game starts
+    init()
+  }
+};
+
 
 
 function init() {
@@ -82,8 +89,6 @@ function init() {
 	clickCounter = 0;
 
 	whichPlayer = 1;
-
-	// msg.textContent = whichPlayer;
 
 	win = false;
 
@@ -144,40 +149,45 @@ function playersClickedOn(targetSquare) {
 
 	// add click listener to grid, check who's playing 
 
-	for (var i = 0; i < targetSquare.length; i++) {
+	
 
-		 targetSquare[i].addEventListener('click', function() 
+			for (var i = 0; i < targetSquare.length; i++) 
 
-		 { 
+			{
 
-		 	if (this.innerHTML == playerX || this.innerHTML == playerO) {
+				if(win === false) {
 
-				return false;		// disable click on square if already used		
+				 targetSquare[i].addEventListener('click', function() 
 
-		 	}
-			
-			  else if (whichPlayer == 1) {
+				 { 
 
-					this.innerHTML= playerX;
+				 	if (this.innerHTML == playerX || this.innerHTML == playerO || win === true) {
+
+						return false;		// disable click on square if already used or when if someone wins		
+
+				 	}
 					
+					  else if (whichPlayer == 1) {
 
-			} else {
+							this.innerHTML= playerX;
 
+					} else {
 
-					this.innerHTML= playerO;
+							this.innerHTML= playerO;
 
+							}; 
 
-					}; 
+					        playerTurn(squares, toggleClass)
+				 })
 
+			}
 
-			        playerTurn(squares, toggleClass)
+      } 
 
-		 })
-
-	}
+  }	
 
 	
-}
+//}
 
 function toggleClass(player1, player2) {
 
@@ -196,27 +206,30 @@ function toggleClass(player1, player2) {
 
 			// highlight buttons for visual feedback by calling toggleClass function
 
-			toggleFunc(player1Turn, player2Turn)
 
-			for (var i = 0; i < target.length; i++) 
+				toggleFunc(player1Turn, player2Turn)
 
-
-				{
-
-					if(whichPlayer == 1 ) {
-
-						whichPlayer = 2
-
-					} else {
-
-						whichPlayer = 1
-					}
+				for (var i = 0; i < target.length; i++) 
 
 
-				} 
+					{
+
+						if(whichPlayer == 1 ) {
+
+							whichPlayer = 2
+
+						} else {
+
+							whichPlayer = 1
+						}
 
 
-			 countClicks()
+					} 
+
+
+				 countClicks()
+
+			 
 
 		}
 
@@ -289,29 +302,25 @@ function toggleClass(player1, player2) {
 
 						let oCounter = 0 ;
 
-						let tieCounter = 0;
 
-					  setTimeout(() => {  // set timeout for browser to keep up in real time
+					  setTimeout(() => {   // set timeout for browser to keep score in real time
 
 						for (var i = 0; i < row.length; i++) 
 
 
 							{
-							// add class to keep track for the strike through line ?
 
 							  if (row[i].innerHTML == playerX) 
 
 							  	  {
 										xCounter++;
-
+										
 										
 								  } else  if (row[i].innerHTML == playerO) {
 
 										oCounter++;
 
-								  }
-
-
+								  } 
 
 																
 							} 
@@ -319,10 +328,8 @@ function toggleClass(player1, player2) {
 
 							isWinner(xCounter, oCounter) // call isWinner within setTimeout to count in real time
 	
-					
-											}, 0)
-
-
+										
+											}, 0)	
 
 		}) 
 
@@ -332,54 +339,52 @@ function toggleClass(player1, player2) {
 function isWinner(counterX, counterO) {
 
 
+
 	ties = 0;
-
-
 
 	if(counterX == 3 || counterO == 3) {
 
-
-		keepScore()	
 
 		win = true
 
 		toggleClass(player1Turn, player2Turn)
 
+		showScore()	
+
 		victory.play()
 		
 		buttonMsg.innerHTML = 'Play again ?'
 
-		
+
+
+
 	
-	} else if (clickCounter === 9 && win === false ) {
-
-		console.log('here')
+	 }   else if (counterX !== 3 && counterO !== 3 && win !== true && clickCounter === 9 ) {
 
 
-     	buttonMsg.innerHTML = 'Tie !Play again ?'
+
+        	buttonMsg.innerHTML = 'Tie !Play again ?'
 
 
-	     	ties++
+	       	ties++
 
-	     	tieNumber += ties
+	       	tieNumber += ties
 
-	     	console.log(tieNumber)
+	       	console.log(tieNumber)
+
+	  	    itsATie.innerHTML = ties
 
 
-		    itsATie.innerHTML = ties
-
-
-	}
+	 }
 
 
 }
 
 
 
+function showScore() {
 
-function keepScore() {
-
-			if(whichPlayer == 2) {
+			if (whichPlayer == 2) {
 
 				winner1++
 				player1Wins.innerHTML = winner1
@@ -396,17 +401,6 @@ function keepScore() {
 
 function gameOver() {
 
-	checks(rows);
-
-// console.log(gameStatus);
-
- //    check(right)
- //    check(middle)
- //    check(left)
- //    check(horTop)
- //    check(horMiddle)
- //    check(horBottom)
- //    check(diagonalLeft)
- //    check(diagonalRight)
-
+	  checks(rows);
+	
 }
